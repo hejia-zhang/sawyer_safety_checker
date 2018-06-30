@@ -29,13 +29,12 @@ int main(int argc, char **argv) {
 
     ros::Rate loop_rate(10);
 
+    std_msgs::String msg;
     std::stringstream ss;
     ss << "dangerous! ";
     msg.data = ss.str();
 
     while (ros::ok()) {
-        std_msgs::String msg;
-
         fcl::CollisionRequestd request;
         fcl::CollisionResultd result;
         fcl::collide(pSawyerGripper->getCollisionObj(), box, request, result);
