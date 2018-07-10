@@ -1,16 +1,26 @@
 <?xml version="1.0"?>
-<package>
-    <name>sawyer_collision_avoidance</name>
+<package format="2">
+    <name>sawyer_safety_checker</name>
     <version>0.0.1</version>
-    <description>sawyer collision avoidance package</description>
+    <description>sawyer safety checker package</description>
     <maintainer email="hjzh578@gmail.com">Hejia Zhang</maintainer>
     <license>MIT</license>
 
     <buildtool_depend>catkin</buildtool_depend>
     <build_depend>roscpp</build_depend>
     <build_depend>rospy</build_depend>
-    <build_depend>intera_core_msgs</build_depend>
-    <run_depend>roscpp</run_depend>
-    <run_depend>rospy</run_depend>
-    <run_depend>intera_core_msgs</run_depend>
+    <build_depend>sensor_msgs</build_depend>
+    <build_depend>shape_msgs</build_depend>
+    <build_depend>moveit_msgs</build_depend>
+    <build_depend>moveit_core</build_depend>
+    <build_depend>message_generation</build_depend>
+    <build_depend>moveit_ros_planning_interface</build_depend>
+    <exec_depend>sensor_msgs</exec_depend>
+    <exec_depend>shape_msgs</exec_depend>
+    <exec_depend>moveit_msgs</exec_depend>
+    <exec_depend>moveit_core</exec_depend>
+    <exec_depend>roscpp</exec_depend>
+    <exec_depend>rospy</exec_depend>
+    <exec_depend>moveit_ros_planning_interface</exec_depend>
+    <exec_depend>message_runtime</exec_depend>
 </package>

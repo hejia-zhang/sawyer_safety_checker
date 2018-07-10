@@ -1,0 +1,1 @@
+add_executable(sawyer_safety_checker_srv sawyer_safety_checker_srv.cpp)

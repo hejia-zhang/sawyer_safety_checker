@@ -1,30 +1,48 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(sawyer_collision_avoidance)
+project(sawyer_safety_checker)
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(fcl REQUIRED)
-
-set(fcl_INCLUDE_DIRS /usr/local/include/fcl)
 ## Find catkin macros and libraries
 find_package(catkin REQUIRED COMPONENTS
              roscpp
              rospy
-             intera_core_msgs
+             moveit_core
+             moveit_msgs
+             shape_msgs
+             message_generation
+             sensor_msgs
+             message_runtime
+             moveit_ros_planning_interface
+)
+
+add_service_files(
+        FILES
+        CollisionChecker.srv
+        CollisionPredictor.srv
+)
+
+generate_messages(
+        DEPENDENCIES
+        sensor_msgs
+        std_msgs
 )
 
 include_directories(
-        ${fcl_INCLUDE_DIRS}
         ${catkin_INCLUDE_DIRS}
         ${Boost_INCLUDE_DIRS}
 )
 
-add_executable(sawyer_collision_avoidance_node src/main.cc src/sawyer_gripper.cc src/sawyer_gripper.h)
+macro(sawyer_safety_checker T)
+    add_executable(${T} ${T}/${T}.cpp)
+    target_link_libraries(${T} ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+    add_dependencies(${T} ${catkin_EXPORTED_TARGETS})
+endmacro()
 
-target_link_libraries(sawyer_collision_avoidance_node
-        fcl
-        ${catkin_LIBRARIES}
-        ${Boost_LIBRARIES}
-)
+foreach (dir
+        sawyer_safety_checker_cli
+        sawyer_safety_checker_srv)
+    sawyer_safety_checker(${dir})
+endforeach ()
 
 
 

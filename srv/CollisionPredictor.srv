@@ -1,0 +1,3 @@
+sensor_msgs/JointState ref_joint_states
+---
+std_msgs/Bool collision_state
