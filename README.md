@@ -1,5 +1,5 @@
-# sawyer_collision_avoidance
+# sawyer_safety_checker
 ## Installation
-- install fcl
+- install Moveit!
 - install this repo
 
