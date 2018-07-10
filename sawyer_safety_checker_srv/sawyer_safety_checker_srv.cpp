@@ -67,7 +67,7 @@ bool checkCollision(sawyer_safety_checker::CollisionChecker::Request &req,
 }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "sawyer_collision_checker_node");
+    ros::init(argc, argv, "sawyer_safety_checker_srv_node");
 
     ros::NodeHandle n;
 

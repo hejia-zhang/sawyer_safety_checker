@@ -20,7 +20,7 @@ void onJointStatesMsg(const sensor_msgs::JointState& msg) {
 }
 
 int main(int argc, char **argv) {
-    ros::init(argc, argv, "sawyer_collision_checker_test_node");
+    ros::init(argc, argv, "sawyer_safety_checker_cli_node");
 
     ros::NodeHandle n;
 
