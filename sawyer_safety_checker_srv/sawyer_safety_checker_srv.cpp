@@ -5,11 +5,9 @@
 #include <ros/ros.h>
 #include <moveit/robot_model_loader/robot_model_loader.h>
 #include <moveit/planning_scene/planning_scene.h>
-#include <moveit/kinematic_constraints/utils.h>
 #include <moveit/robot_state/conversions.h>
 #include <moveit/collision_detection/collision_tools.h>
 #include <moveit_msgs/PlanningScene.h>
-#include <shape_msgs/SolidPrimitive.h>
 
 #include "sawyer_safety_checker/CollisionChecker.h"
 #include "sawyer_safety_checker/CollisionPredictor.h"
